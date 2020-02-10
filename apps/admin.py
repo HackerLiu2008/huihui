@@ -1132,7 +1132,6 @@ def lock_acc():
 
 
 @admin_blueprint.route('/account_info/', methods=['GET'])
-@admin_required
 def account_info():
     page = request.args.get('page')
     limit = request.args.get('limit')
@@ -1295,12 +1294,8 @@ def admin_login():
 
 
 @admin_blueprint.route('/', methods=['GET'])
-@admin_required
 def index():
-    admin_name = g.admin_name
-    context = dict()
-    context['admin_name'] = admin_name
-    return render_template('admin/AdminIndex.html', **context)
+    return render_template('admin/AdminIndex.html')
 
 
 @admin_blueprint.route('/main/', methods=['GET'])
