@@ -78,8 +78,8 @@ def save_file(file, filename, account_path):
             except:
                 logging.info("warning 创建目录失败")
                 return "创建目录失败, 看日志去%s" % bigpath
-        new_name = change_filename(filename)
-        filepath = bigpath + "/" + new_name
+        # new_name = change_filename(filename)
+        filepath = bigpath + "/" + filename
         try:
             file.save(filepath)
         except Exception as e:
